@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet,Image } from 'react-native';
 import { ScreenWH } from '../../constants'
-
+import * as Animatable from 'react-native-animatable';
 // create a component
 
 interface LogoStyle{
@@ -20,12 +20,14 @@ const Logo: FC<LogoStyle> = (props) => {
         bottom: props.bottom
     }
     return (
-        <View style={[styles.rubic,styleLess]}>
-            <Image
+        <Animatable.View style={[styles.rubic,styleLess]} animation='slideInDown' duration={2000}>
+            <Animatable.Image
+                duration ={1200}
+                animation='zoomInUp' 
                 source={require('../../assets/images/icons8-airplane-mode-on-64.png')}
                 style={[styles.logo]}
             />
-      </View>
+      </Animatable.View>
     );
 };
 export default Logo;

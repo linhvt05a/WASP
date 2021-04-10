@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Button, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import {ScreenWH} from '../../constants'
+import * as Animatable from 'react-native-animatable';
 
 interface ButtonStyle {
     idBtn: number
@@ -19,8 +20,7 @@ const ButtonCustom: FC<ButtonStyle> = (props) => {
  }
     return (
             <LinearGradient  colors={props.color} style={styles.linearGradient}>
-                
-                <TouchableOpacity onPress={props.onPress} style={styles.touch}>
+                <TouchableOpacity  onPress={props.onPress} style={styles.touch} >
                     {
                     props.idBtn == 0 
                     ?

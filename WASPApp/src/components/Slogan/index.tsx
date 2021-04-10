@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component, FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 interface SloganStyle{
     title: string
@@ -21,7 +22,7 @@ const Slogan: FC<SloganStyle> = (props) => {
     }
 
     return (
-        <Text style={[SloganStyle]}>{props.title}</Text>
+        <Animatable.Text animation="slideInDown" direction="alternate" style={[SloganStyle]}>{props.title}</Animatable.Text>
     );
 };
 

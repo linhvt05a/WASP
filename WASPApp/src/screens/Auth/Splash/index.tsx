@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import { ScreenWH } from '../../../constants'
 import {Logo, Slogan} from '../../../components'
+import * as Animatable from 'react-native-animatable';
 
 const Splash = ({navigation}) => {
 
@@ -12,7 +13,7 @@ const Splash = ({navigation}) => {
       }, 3000)
   },[])
   return (
-    <View style={styles.container}>
+    <Animatable.View style={styles.container} duration={2000} animation='slideInDown'>
       <LinearGradient
         colors={['#70b59e', '#1eeba7']}
         style={styles.linearGradient}
@@ -20,7 +21,7 @@ const Splash = ({navigation}) => {
       <Logo />
       <Slogan title="Cùng bay với Lanka nào !" color="white" fontSize={20} top={10} fontFamily="Helvetica-BoldOblique"/>
       </LinearGradient>
-    </View>
+    </Animatable.View>
 
   )
 }
