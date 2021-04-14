@@ -1,8 +1,10 @@
-import Splash from '../screens/Auth/Splash'
-import Login from '../screens/Auth/Login'
-import Signup from '../screens/Auth/Signup'
+import Splash from './Auth/Splash'
+import Account from './Auth/Account'
+import Signup from './Auth/Signup'
+import Login from './Auth/Login'
 export {
     Splash,
-    Login,
-    Signup
+    Account,
+    Signup,
+    Login
 }
