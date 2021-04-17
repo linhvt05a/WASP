@@ -5,13 +5,16 @@ import {ScreenWH} from '../../../constants'
 import {Logo, Slogan} from '../../../components'
 import * as Animatable from 'react-native-animatable';
 
+interface Props {
+    navigation: any
+}
 // create a component
-const Login: FC = (props) => {
+const Login: FC<Props> = (props) => {
     return (
         <View style={styles.container}>
            <View style={styles.header}>
                 <Logo />
-                <Slogan title="Đăng nhập để bay cùng LanKa bạn nhé!" top={20} color="#ffff" fontSize={16} fontWeight="bold"/>
+                <Slogan title="Đăng nhập để nhận ưu đãi từ LanKa bạn nhé!" top={20} color="#ffff" fontSize={16} fontWeight="bold"/>
            </View>
            <Animatable.View style={styles.bottom} duration={3000} animation='fadeInUpBig'>
                <View style={styles.form}>
@@ -28,11 +31,22 @@ const Login: FC = (props) => {
                         <TextInput secureTextEntry={true} autoCapitalize='none' placeholder="Nhập mật khẩu" style={styles.txtInput}/>
                         <Image source={require('../../../assets/images/outline_visibility_off_black_20pt_3x.png')} style={styles.checkBox}/>
                     </View>
-                    <TouchableOpacity style={styles.btnSignup} onPress={()=> props.navigation.navigate('Login')}>
+                    <TouchableOpacity style={styles.btnSignup} onPress={()=> props.navigation.navigate('Home')}>
                         <Text style={styles.btnTxt}>Sign In</Text>
                     </TouchableOpacity>
                </View>
+               <View style={styles.view_text_signup}>
+                <Animatable.Text style={styles.txtAccount} duration={4000} animation='slideInLeft'>
+                        Bạn chưa có account ?  
+                        <TouchableOpacity onPress={()=> props.navigation.navigate('Signup')}>
+                            <Text style={styles.textSignup}>
+                                    Sign Up
+                            </Text>
+                        </TouchableOpacity>
+                    </Animatable.Text>
+               </View>
            </Animatable.View>
+
         </View>
     );
 };
@@ -40,10 +54,21 @@ const Login: FC = (props) => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flex:1,
         backgroundColor: '#32a88d',
+    },
+    textSignup:{
+        color:'#0f9179',
+        fontSize: 14,
+        fontWeight:'bold', 
+        top:3, 
+        textDecorationLine:'underline',
+        left: 5
+    },
+    view_text_signup:{
+        justifyContent:'center',
+        alignItems:'center',
+        bottom: 15
     },
     header:{
         flex: 2,

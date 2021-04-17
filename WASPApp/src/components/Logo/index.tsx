@@ -6,10 +6,12 @@ import * as Animatable from 'react-native-animatable';
 // create a component
 
 interface LogoStyle{
-    top: number
-    left: number
-    right:number
-    bottom:number
+    top?: number
+    left?: number
+    right?:number
+    bottom?:number
+    icon?: any
+    animation?: any
 }
 
 const Logo: FC<LogoStyle> = (props) => {
@@ -17,13 +19,13 @@ const Logo: FC<LogoStyle> = (props) => {
         top:props.top,
         left:props.left,
         right: props.right,
-        bottom: props.bottom
+        bottom: props.bottom,
     }
     return (
-        <Animatable.View style={[styles.rubic,styleLess]} animation='slideInDown' duration={2000}>
+        <Animatable.View style={[styles.rubic,styleLess]} animation= {props.animation} duration={2000}>
             <Animatable.Image
                 duration ={1200}
-                animation='zoomInUp' 
+                animation= {props.animation} 
                 source={require('../../assets/images/icons8-airplane-mode-on-64.png')}
                 style={[styles.logo]}
             />

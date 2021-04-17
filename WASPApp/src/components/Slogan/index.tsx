@@ -4,12 +4,12 @@ import { View, Text, StyleSheet } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 interface SloganStyle{
-    title: string
-    top: number
-    fontSize: number
-    color: string
-    fontWeight: string
-    fontFamily:string
+    title?: string
+    top?: number
+    fontSize?: number
+    color?: string
+    fontWeight?: string
+    fontFamily?:string
 }
 // create a component
 const Slogan: FC<SloganStyle> = (props) => {

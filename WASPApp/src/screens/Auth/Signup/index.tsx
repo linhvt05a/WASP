@@ -6,14 +6,16 @@ import {ScreenWH} from '../../../constants'
 import {Logo, Slogan} from '../../../components'
 import * as Animatable from 'react-native-animatable';
 
-
+interface Props {
+    navigation: any
+}
 // create a component
-const Signup:FC = (props) => {
+const Signup:FC<Props> = (props) => {
     return (
       <View style={styles.container}>
            <View style={styles.header}>
                 <Logo />
-                <Slogan title="Bay cùng Lanka. Nhận ngàn ưu đãi" color="white" fontSize = {16} top={20}/>
+                <Slogan title="Hoàn tất đăng ký để nhận ưu đãi từ LanKa bạn nhé!" color="white" fontSize = {16} top={20}/>
            </View>
 
            <Animatable.View style={styles.bottom} duration={5000} animation='fadeInUpBig'>

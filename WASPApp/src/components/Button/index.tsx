@@ -10,7 +10,7 @@ interface ButtonStyle {
     idBtn: number
     color: any
     btnTitle: string
-    onPress : ()=>void
+    onPress? : ()=>void
     textColor: string
 }
 // create a component
